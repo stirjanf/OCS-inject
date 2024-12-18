@@ -95,7 +95,7 @@ if ($devices.count -gt 0) {
 		$xml.REQUEST.CONTENT.ACCOUNTINFO[12].KEYVALUE = "$($_.poticaj)"
 		$xml.Save("$($archive)\XML_OCS_$($_.name).xml")
 		Write-Host ""
-		Invoke-Expression "powershell.exe -noprofile -executionpolicy bypass -file `"$($root)\ocsinventory-powershell-injector.ps1`" -info -v -f `"$($archive)\XML_OCS_$($_.name).xml`" -url http://192.168.20.19/ocsinventory"
+		Invoke-Expression "powershell.exe -noprofile -executionpolicy bypass -file `"$($root)\ocsinventory-powershell-injector.ps1`" -info -v -f `"$($archive)\XML_OCS_$($_.name).xml`" -url $url"
 		Write-Host ""
 	}
 	Start-Sleep -s 1
