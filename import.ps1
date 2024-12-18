@@ -24,9 +24,7 @@ $root = "X:\informatika\1-1 POSTAVKE i DOKUMENTACIJA\2-UPUTSTVA\OCS\XML_import_n
 $archive = "$($root)\XML_arhiva"
 $xml_template = "$($root)\XML_OCS_template.xml"
 
-do {
-	$variant = Prompt "1 = Fast import - hostname, mac, sn`n2 = Full import - sve informacije"
-} while ($variant -ne 1 -and $variant -ne 2)
+do { $variant = Prompt "1 = Fast import - hostname, mac, sn`n2 = Full import - sve informacije" } while ($variant -ne 1 -and $variant -ne 2)
 
 if ($variant -eq 1) { $host.ui.RawUI.WindowTitle = "Fast import" } else { $host.ui.RawUI.WindowTitle = "Full import" }
 
