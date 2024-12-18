@@ -46,7 +46,7 @@ do {
 if ($devices.count -gt 0) {
     $devices | ForEach-Object {
         Write-Host ""
-        Invoke-Expression "powershell.exe -noprofile -executionpolicy bypass -file `"$($root)\ocsinventory-powershell-injector.ps1`" -info -v -f `"$($archive)\$($_)`" -url http://192.168.20.19/ocsinventory"
+        Invoke-Expression "powershell.exe -noprofile -executionpolicy bypass -file `"$($root)\ocsinventory-powershell-injector.ps1`" -info -v -f `"$($archive)\$($_)`" -url $url"
         Write-Host ""
     }
     Start-Sleep -s 1
